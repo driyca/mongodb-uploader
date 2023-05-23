@@ -36,7 +36,7 @@ docker/flags/tag: docker/flags/build
 	touch docker/flags/tag
 
 
-docker/flags/push: docker/flags/login docker/flags/build
+docker/flags/push: docker/flags/login docker/flags/tag docker/flags/build
 	podman push $(IMAGE_REPOSITORY):latest
 	podman push $(IMAGE_NAME)
 
