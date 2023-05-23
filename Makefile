@@ -1,5 +1,5 @@
 IMAGE_REPOSITORY=docker.io/andreclaudino/mongodb-uploader
-PROJECT_VERSION := $$(cat Cargo.toml | grep version | head -n 1 | awk '{print $3}' | sed -r 's/^"|"$//g')
+PROJECT_VERSION := $$(cat Cargo.toml | grep version | head -n 1 | awk '{print $$3}' | sed -r 's/^"|"$$//g')
 IMAGE_NAME=$(IMAGE_REPOSITORY):$(PROJECT_VERSION)
 GIT_REFERENCE := $$(git log -1 --pretty=%h)
 

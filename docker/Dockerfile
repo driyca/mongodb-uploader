@@ -11,14 +11,14 @@ ADD src /application/src
 RUN cargo test
 RUN cargo build --release
 RUN mkdir -p /application/bin
-RUN cp /application/target/release/awin-feed-downloader /application/bin/
+RUN cp /application/target/release/mongodb-uploader /application/bin/
 
 FROM docker.io/debian:buster-slim
 
 ARG GIT_REFERENCE=HEAD
 ARG VERSION
 
-LABEL "org.opencontainers.image.source"="https://gitlab.com/driyca/awin-feed-downloader"
+LABEL "org.opencontainers.image.source"="https://gitlab.com/driyca/mongodb-uploader"
 LABEL "org.opencontainers.image.revision"="${GIT_REFERENCE}"
 LABEL "org.opencontainers.image.version"="${VERSION}"
 LABEL "com.driyca.entrypoint"="mongodb-uploader"
